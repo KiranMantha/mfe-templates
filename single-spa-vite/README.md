@@ -4,7 +4,13 @@ This example makes use of npm workspaces to seggregate the apps. All the apps ar
 
 ## To add an app:
 
-navigate to `apps` folder and run:
+navigate to `packages` folder and 
+
+a. to create an app, run:
 ```
 npx create-vite@latest <app-name> --template react-ts
+```
+b. to create a lib, run:
+```
+npx create-vite@latest <lib-name> --template vanilla-ts
 ```
