@@ -1,0 +1,18 @@
+{
+	"name": "single-spa-vite",
+	"version": "1.0.0",
+	"description": "mfe using single-spa, vite and react",
+	"main": "index.js",
+	"workspaces": [
+		"apps/*"
+	],
+	"scripts": {
+		"start": "concurrently \"npm run dev --prefix apps/host\" \"npm run dev --prefix apps/user\" \"npm run dev --prefix apps/recommendations\" \"npm run dev --prefix apps/checkout\"",
+		"build:all": "concurrently \"npm run build --prefix apps/host\" \"npm run build --prefix apps/user\" \"npm run build --prefix apps/recommendations\" \"npm run build --prefix apps/checkout\""
+	},
+	"author": "KiranMantha",
+	"license": "ISC",
+	"devDependencies": {
+		"concurrently": "^9.1.2"
+	}
+}
