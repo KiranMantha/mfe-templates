@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import { fromEvent, useSSE } from 'utils';
 import './App.css';
 
 export default function App() {
@@ -10,6 +12,17 @@ export default function App() {
 }
 
 function Layout() {
+  useSSE();
+
+  useEffect(() => {
+    const unsubscribe = fromEvent(document, 'sse', (e: CustomEvent) => {
+      console.log('from host app', e.detail);
+    });
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
   return (
     <div className="host-app">
       <nav id="nav">

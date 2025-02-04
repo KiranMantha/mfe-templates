@@ -1,12 +1,12 @@
 export const fromEvent = (
   target: HTMLElement | Document | Window,
   eventName: string,
-  onNext: EventListener,
+  onNext: EventListener | ((e: CustomEvent) => void),
   options = false
 ) => {
-  target.addEventListener(eventName, onNext, options);
+  target.addEventListener(eventName, onNext as EventListener, options);
   const unsubscribe = () => {
-    target.removeEventListener(eventName, onNext, options);
+    target.removeEventListener(eventName, onNext as EventListener, options);
   };
   return unsubscribe;
 };

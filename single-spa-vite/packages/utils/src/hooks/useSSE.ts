@@ -5,7 +5,7 @@ import { useSignal } from './useSignal';
 
 export type SSEMessage = { notificationType: string } & Record<string, unknown>;
 
-const REACT_APP_SSE_URL = '';
+const REACT_APP_SSE_URL = 'http://localhost:3000/sse';
 
 export const useSSE = () => {
   const controller = useSignal<AbortController>();
@@ -30,7 +30,9 @@ export const useSSE = () => {
     });
 
     return () => {
-      controller()!.abort();
+      if (controller()) {
+        controller()!.abort();
+      }
     };
   }, []);
 };
