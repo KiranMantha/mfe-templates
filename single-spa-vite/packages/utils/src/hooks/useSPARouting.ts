@@ -16,5 +16,5 @@ export const useSPARouting = (isSingleSpa: boolean, basename: string) => {
       const unsubscribe = fromEvent(window, 'single-spa:routing-event', hostNavigate);
       return () => unsubscribe();
     }
-  }, [basename, isSingleSpa]);
+  }, [isSingleSpa, basename]);
 };
