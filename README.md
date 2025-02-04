@@ -40,3 +40,5 @@ All the apps contain below layout:
 | +----------------------------------------------------------------------+     |
 +------------------------------------------------------------------------------+
 ```
+
+**express-sse** is an express server to simulate server-sent events.
