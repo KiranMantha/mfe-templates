@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { emitCustomEvent } from '../helpers';
 import { useSignal } from './useSignal';
 
-export type SSEMessage = Record<string, unknown>;
+export type SSEMessage = { notificationType: string } & Record<string, unknown>;
 
 const REACT_APP_SSE_URL = '';
 
