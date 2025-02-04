@@ -1,4 +1,9 @@
-export const fromEvent = (target: Window, eventName: string, onNext: EventListener, options = false) => {
+export const fromEvent = (
+  target: HTMLElement | Document | Window,
+  eventName: string,
+  onNext: EventListener,
+  options = false
+) => {
   target.addEventListener(eventName, onNext, options);
   const unsubscribe = () => {
     target.removeEventListener(eventName, onNext, options);
@@ -6,7 +11,7 @@ export const fromEvent = (target: Window, eventName: string, onNext: EventListen
   return unsubscribe;
 };
 
-export const emitCustomEvent = (element: HTMLElement | Document, eventName: string, payload: unknown) => {
+export const emitCustomEvent = (element: HTMLElement | Document | Window, eventName: string, payload: unknown) => {
   const event = new CustomEvent(eventName, {
     detail: payload
   });
