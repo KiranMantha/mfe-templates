@@ -1,6 +1,24 @@
 import { BrowserRouter, Link, MemoryRouter, Route, Routes } from 'react-router-dom';
-import { useSPARouting } from 'utils';
+import { CustomEvents, useCustomEvent, useSPARouting } from 'utils';
 import './App.css';
+
+const UserDashboard = () => {
+  const dispatchEvent = useCustomEvent(CustomEvents.ON_ADD_RECOMMENDATION);
+  return (
+    <div className="card">
+      <h1>User Dashboard</h1>
+      <button
+        onClick={() => {
+          dispatchEvent({
+            greeting: 'hello recommendations app!! from user app'
+          });
+        }}
+      >
+        Send Data To Recommendations
+      </button>
+    </div>
+  );
+};
 
 export default function App({ isSingleSpa = false, basename = '/' }: { isSingleSpa: boolean; basename: string }) {
   const Router = isSingleSpa ? MemoryRouter : BrowserRouter;
@@ -19,14 +37,7 @@ export default function App({ isSingleSpa = false, basename = '/' }: { isSingleS
             <Link to="/profile">Profile</Link>
           </nav>
           <Routes>
-            <Route
-              index
-              element={
-                <div className="card">
-                  <h1>User Dashboard</h1>
-                </div>
-              }
-            />
+            <Route index element={<UserDashboard />} />
             <Route
               path="/profile"
               element={
