@@ -1,0 +1,3 @@
+export enum CustomEvents {
+  ON_ADD_RECOMMENDATION = 'ON_ADD_RECOMMENDATION'
+}
