@@ -1,5 +1,5 @@
+import { CustomEvents, useCustomEvent, useSPARouting } from 'libs/utils';
 import { BrowserRouter, Link, MemoryRouter, Route, Routes } from 'react-router-dom';
-import { CustomEvents, useCustomEvent, useSPARouting } from 'utils';
 import './App.css';
 
 const UserDashboard = () => {

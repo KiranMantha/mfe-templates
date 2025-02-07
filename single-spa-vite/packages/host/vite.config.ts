@@ -13,7 +13,7 @@ export default defineConfig({
         recommendations: 'http://localhost:5002/dist/assets/recommendationsEntry.js',
         checkout: 'http://localhost:5003/dist/assets/checkoutEntry.js'
       },
-      shared: ['react', 'react-dom', 'react-router-dom', 'single-spa-react', 'utils']
+      shared: ['react', 'react-dom', 'react-router-dom', 'single-spa-react', 'libs/utils']
     })
   ],
   build: {

@@ -13,7 +13,7 @@ export default defineConfig({
         './App': './src/App.tsx'
         // './routes': './src/routes.tsx'
       },
-      shared: ['react', 'react-dom', 'react-router-dom', 'single-spa-react', 'utils']
+      shared: ['react', 'react-dom', 'react-router-dom', 'single-spa-react', 'libs/utils']
     })
   ],
   build: {

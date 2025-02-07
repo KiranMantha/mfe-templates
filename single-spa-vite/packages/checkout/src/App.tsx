@@ -1,5 +1,5 @@
+import { useSPARouting } from 'libs/utils';
 import { BrowserRouter, Link, MemoryRouter, Route, Routes } from 'react-router-dom';
-import { useSPARouting } from 'utils';
 import './App.css';
 
 export default function App({ isSingleSpa, basename = '/' }: { isSingleSpa: boolean; basename: string }) {

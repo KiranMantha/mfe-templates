@@ -1,6 +1,6 @@
+import { fromEvent, useSSE } from 'libs/utils';
 import { useEffect } from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import { fromEvent, useSSE } from 'utils';
 import './App.css';
 
 export default function App() {
